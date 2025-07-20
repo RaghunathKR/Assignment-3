@@ -24,4 +24,13 @@ describe('paintRequiredForMultipleCoats', () => {
   test('should handle coats of 0 correctly', () => {
     expect(paintRequiredForMultipleCoats(100, 10, 0)).toBe(0);
   });
+
+    test('should return NaN for invalid inputs', () => {
+    expect(paintRequiredForMultipleCoats(NaN, 10, 2)).toBeNaN();
+    expect(paintRequiredForMultipleCoats(100, NaN, 2)).toBeNaN();
+    expect(paintRequiredForMultipleCoats(100, 10, NaN)).toBeNaN();
+    expect(paintRequiredForMultipleCoats("abc" as any, 10, 2)).toBeNaN();
+    expect(paintRequiredForMultipleCoats(100, undefined as any, 2)).toBeNaN();
+  });
+
 });
