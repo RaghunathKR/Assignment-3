@@ -24,4 +24,12 @@ describe('calculateTotalCost', () => {
   test('should return 0 when both costs are 0', () => {
     expect(calculateTotalCost(0, 0)).toBe(0);
   });
+
+    test('should return NaN for invalid inputs', () => {
+    expect(calculateTotalCost(NaN, 100)).toBeNaN();
+    expect(calculateTotalCost(100, NaN)).toBeNaN();
+    expect(calculateTotalCost("abc" as any, 50)).toBeNaN();
+    expect(calculateTotalCost(undefined as any, 20)).toBeNaN();
+  });
+
 });

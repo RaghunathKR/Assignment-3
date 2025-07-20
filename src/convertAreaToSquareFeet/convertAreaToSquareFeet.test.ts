@@ -16,4 +16,11 @@ describe('convertAreaToSquareFeet', () => {
     expect(convertAreaToSquareFeet(-200)).toBeCloseTo(-2152.78);
     expect(convertAreaToSquareFeet(-150)).toBeCloseTo(-1614.585);
   });
+
+    test('should return NaN for invalid inputs', () => {
+    expect(convertAreaToSquareFeet(NaN)).toBeNaN();
+    expect(convertAreaToSquareFeet(undefined as any)).toBeNaN();
+    expect(convertAreaToSquareFeet("abc" as any)).toBeNaN();
+  });
+
 });
